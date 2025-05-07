@@ -1,10 +1,15 @@
 package edu.cnt.developer.profe
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.math.absoluteValue
 
 /**
  *
@@ -30,5 +35,26 @@ class IMCActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    fun calcularImc(view: View) {
+        if (view.id == R.id.botonCalcular)
+        {
+            Log.d("MIAPP", "LA vista tocada es el botón de calcular ${view.id} ")
+            Log.d("MIAPP", " absolute = ${R.id.botonCalcular.absoluteValue}")
+
+        }
+        //COGER EL PESO
+        var pesof : Float = findViewById<EditText>(R.id.editTextPeso).text.toString().toFloat();
+        /*var cajatextopeso =  findViewById<EditText>(R.id.editTextPeso)
+        var pesostring :String = cajatextopeso.text.toString()
+        var pesofloat = pesostring.toFloat()*/
+        //COGER LA ALTURA
+        var alturaf : Float = findViewById<EditText>(R.id.editTextAltura).text.toString().toFloat();
+        //HACER EL CÁCULO
+        var imcnum = pesof / (alturaf*alturaf)
+        Log.d("MIAPP", "SU IMC numérico es = $imcnum")
+        val notiToast : Toast = Toast.makeText(this, "SU IMC numérico es = $imcnum", Toast.LENGTH_LONG)
+        notiToast.show() //muestro el mensaje
     }
 }
