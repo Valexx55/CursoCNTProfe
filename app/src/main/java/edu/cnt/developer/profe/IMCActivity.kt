@@ -18,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat
  * IMC >=31 -> obeso
  *
  */
+//TODO hacer la parte dinámica de la calculadora del IMC
 
 class IMCActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
