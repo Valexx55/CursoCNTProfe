@@ -3,6 +3,8 @@ package edu.cnt.developer.profe
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 //import android.util.Log
 //import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -40,10 +42,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         Log.d("MIAPP", "Estoy en oncreate")
-        val nombreVersion:String =  obtenerVersionAndroid()
+        /*val nombreVersion:String =  obtenerVersionAndroid()
         //nombreVersion = "PEPE"
         Log.d("MIAPP", "Version " + nombreVersion)
-        Log.d("MIAPP", "Version = $nombreVersion")
+        Log.d("MIAPP", "Version = $nombreVersion")*/
     }
 
     fun obtenerVersionAndroid (): String
@@ -59,6 +61,17 @@ class MainActivity : AppCompatActivity() {
 
 
         return nombreVersion
+    }
+
+    fun botonClickado(view: View) {
+        Log.d("MIAPP", "el usuario ha tocado el botón")
+        //OBTENER MI VERSION
+        val nombreversion = obtenerVersionAndroid()
+        //PINTAR EL MENSAJE EN LA CAJA DE TEXTO
+            //1 obtener la caja de texto
+        val cajaTexto : TextView =   findViewById<TextView>(R.id.cajatexto)
+            //2 indicar a la caja de texto el valor
+        cajaTexto.text = nombreversion
     }
 
 
