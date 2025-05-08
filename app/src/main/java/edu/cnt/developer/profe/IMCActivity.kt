@@ -1,5 +1,6 @@
 package edu.cnt.developer.profe
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -23,7 +24,7 @@ import kotlin.math.absoluteValue
  * IMC >=31 -> obeso
  *
  */
-//TODO hacer la parte dinámica de la calculadora del IMC
+
 
 class IMCActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,5 +57,9 @@ class IMCActivity : AppCompatActivity() {
         Log.d("MIAPP", "SU IMC numérico es = $imcnum")
         val notiToast : Toast = Toast.makeText(this, "SU IMC numérico es = $imcnum", Toast.LENGTH_LONG)
         notiToast.show() //muestro el mensaje
+        //TODO salatar a la actividad resultado, donde mostramos el resultado del imc con una imagen
+        val intentResultado : Intent = Intent(this, ResultadoIMCActivity::class.java)
+        intentResultado.putExtra("IMC_RESULTADO", imcnum)
+        startActivity(intentResultado)//lanzo la actividad nueva
     }
 }
