@@ -31,6 +31,7 @@ class IMCActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContentView(R.layout.activity_imcactivity)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -56,9 +57,10 @@ class IMCActivity : AppCompatActivity() {
         //HACER EL CÁCULO
         var imcnum = pesof / (alturaf*alturaf)
         Log.d("MIAPP", "SU IMC numérico es = $imcnum")
+        //TODO acceder dinámicamente al recurso string (para i18n)
         val notiToast : Toast = Toast.makeText(this, "SU IMC numérico es = $imcnum", Toast.LENGTH_LONG)
         notiToast.show() //muestro el mensaje
-        //TODO salatar a la actividad resultado, donde mostramos el resultado del imc con una imagen
+
         val intentResultado : Intent = Intent(this, ResultadoIMCActivity::class.java)
         intentResultado.putExtra("IMC_RESULTADO", imcnum)
         startActivity(intentResultado)//lanzo la actividad nueva
