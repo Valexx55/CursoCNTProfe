@@ -1,6 +1,7 @@
 package edu.cnt.developer.profe
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -61,5 +62,16 @@ class IMCActivity : AppCompatActivity() {
         val intentResultado : Intent = Intent(this, ResultadoIMCActivity::class.java)
         intentResultado.putExtra("IMC_RESULTADO", imcnum)
         startActivity(intentResultado)//lanzo la actividad nueva
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        Log.d("MIAPP", "CAMBIO EN LA ORIENTACIÓN")
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+
+        }else {
+
+        }
     }
 }

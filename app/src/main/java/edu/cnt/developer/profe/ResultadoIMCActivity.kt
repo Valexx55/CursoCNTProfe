@@ -1,5 +1,6 @@
 package edu.cnt.developer.profe
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -32,7 +33,17 @@ class ResultadoIMCActivity : AppCompatActivity() {
         when
         {
             resultadoImcNumerico < 16 -> {
-                this.mostrarResultado(R.drawable.imc_desnutrido, TipoIMC.DESNUTRIDO.toString())
+                //comprobar la orientación y elegir una imagen u otra
+                val orientacion = resources.configuration.orientation
+                if (orientacion == Configuration.ORIENTATION_PORTRAIT)
+                {
+                    //ESTOY EN VERTICAL
+                    this.mostrarResultado(R.drawable.imc_desnutrido, TipoIMC.DESNUTRIDO.toString())
+                } else if (orientacion == Configuration.ORIENTATION_LANDSCAPE){
+                    //ESTOY EN HORIZONTAL
+                    this.mostrarResultado(R.drawable.imc_desnutrido, TipoIMC.DESNUTRIDO.toString())
+                }
+                //this.mostrarResultado(R.drawable.imc_desnutrido, TipoIMC.DESNUTRIDO.toString())
             }
             resultadoImcNumerico >= 16 &&  resultadoImcNumerico < 18-> {
                 this.mostrarResultado(R.drawable.imc_delgado, TipoIMC.DELGADO.toString())
