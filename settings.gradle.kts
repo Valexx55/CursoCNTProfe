@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CursoCNTProfe"
 include(":app")
- 
+include(":pruebaskotlin")

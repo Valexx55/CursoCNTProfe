@@ -38,6 +38,8 @@ class IMCActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
     }
 
     fun calcularImc(view: View) {
@@ -76,4 +78,6 @@ class IMCActivity : AppCompatActivity() {
 
         }
     }
+
+
 }
