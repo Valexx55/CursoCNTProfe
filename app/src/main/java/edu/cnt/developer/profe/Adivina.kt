@@ -4,6 +4,7 @@
     import android.os.Bundle
     import android.util.Log
     import android.view.View
+    import android.widget.Button
     import android.widget.EditText
     import android.widget.TextView
     import android.widget.Toast
@@ -115,6 +116,7 @@
                 var final: Toast =
                     Toast.makeText(this, "Has acertado campeón, ENHORABUENA!", Toast.LENGTH_LONG)
                 final.show()
+                findViewById<Button>(R.id.btnrestart).visibility = View.VISIBLE
 
             } else {
 
@@ -134,9 +136,17 @@
                     var final: Toast =
                         Toast.makeText(this, "Xa non podes seguir xogando", Toast.LENGTH_LONG)
                     final.show()
+                    findViewById<Button>(R.id.btnrestart).visibility = View.VISIBLE
 
                 }
 
             }
+        }
+
+        fun reiniciarPartida(view: View) {
+
+            //recreate()
+            this.finish()//cerrar la actividad
+            this.startActivity(intent)//lanzo
         }
     }

@@ -60,7 +60,8 @@ class IMCActivity : AppCompatActivity() {
         var imcnum = pesof / (alturaf*alturaf)
         Log.d("MIAPP", "SU IMC numérico es = $imcnum")
         //TODO acceder dinámicamente al recurso string (para i18n)
-        val notiToast : Toast = Toast.makeText(this, "SU IMC numérico es = $imcnum", Toast.LENGTH_LONG)
+        val mensajeResutltado = getString(R.string.mensaje_resultado_imc, imcnum)
+        val notiToast : Toast = Toast.makeText(this, mensajeResutltado, Toast.LENGTH_LONG)
         notiToast.show() //muestro el mensaje
 
         val intentResultado : Intent = Intent(this, ResultadoIMCActivity::class.java)

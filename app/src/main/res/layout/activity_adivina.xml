@@ -54,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:gravity="center">
 
 
@@ -63,6 +64,14 @@
             android:layout_height="wrap_content"
             android:onClick="testar"
             android:text="Proba" />
+
+        <Button
+            android:id="@+id/btnrestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:onClick="reiniciarPartida"
+            android:text="REINICAR" />
     </LinearLayout>
 
 </LinearLayout>
