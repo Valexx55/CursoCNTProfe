@@ -4,6 +4,8 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -40,6 +42,30 @@ class IMCActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    //sobreescribimos este método para dibujar un menú en nuestra actividad
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_imc, menu)//ya pinto el menú
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    //para escuchar las acciones sobre el menu del app bar, debo sobreescribir el método
+    //onOptionItemSelected
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.d("MIAPP", "Menú app bar tocado ${item.itemId} ${item.title} ${item.order}")
+        when (item.itemId)
+        {
+            R.id.opcionLimpiar -> {
+                Log.d("MIAPP", "Ha tocado la opción de limpiar")
+            }
+            R.id.opcionSalir -> {
+                Log.d("MIAPP", "Ha tocado la opción de salir")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun calcularImc(view: View) {
