@@ -1,5 +1,6 @@
 package edu.cnt.developer.profe
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -60,12 +62,38 @@ class IMCActivity : AppCompatActivity() {
         {
             R.id.opcionLimpiar -> {
                 Log.d("MIAPP", "Ha tocado la opción de limpiar")
+                //TODO HACED UN MÉTODO PARA LIMPIAR EL FORMUALARIO
+                this.limpiaFormulario()
             }
             R.id.opcionSalir -> {
                 Log.d("MIAPP", "Ha tocado la opción de salir")
+                //TODO HACED UN MÉTODO PARA SALIR DE LA APP
+                this.salirApp()
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun limpiaFormulario() {
+        findViewById<EditText>( R.id.editTextPeso).text.clear()
+        findViewById<EditText>( R.id.editTextAltura).text.clear()
+    }
+
+    private fun salirApp() {
+        //this.finish()//salimos / cerramos esta actividad
+        //this.finishAffinity()//salimos de la app
+        val dialogo =  AlertDialog.Builder(this)
+            .setTitle("SALIR")
+            .setMessage("¿Desea salir")
+            .setNegativeButton("NO"){
+                dialog: DialogInterface, opcion:Int ->
+                    dialog.cancel()
+
+            }
+            .setPositiveButton("SÍ"){
+                dialog, opcion -> this.finish()
+            }
+        dialogo.show()
     }
 
     fun calcularImc(view: View) {
