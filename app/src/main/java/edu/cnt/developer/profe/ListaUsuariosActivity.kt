@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -35,6 +36,8 @@ class ListaUsuariosActivity : AppCompatActivity() {
         var adapterUsuarios = UsuariosAdapter(listaUsuarios)
         recview.adapter = adapterUsuarios//Asocio al recycler su apadter
         var layoutRecycler : RecyclerView.LayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false )
+        //var layoutRecycler : RecyclerView.LayoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false )
+        //var layoutRecycler : RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         recview.layoutManager = layoutRecycler
     }
 

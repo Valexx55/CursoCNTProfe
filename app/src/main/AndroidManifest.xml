@@ -18,6 +18,9 @@
         android:theme="@style/Theme.CursoCNTProfe"
         tools:targetApi="31">
         <activity
+            android:name=".PerrosActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaUsuariosActivity"
             android:exported="false" />
         <activity

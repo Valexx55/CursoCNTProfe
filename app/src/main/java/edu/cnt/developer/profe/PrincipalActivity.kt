@@ -29,7 +29,8 @@ class PrincipalActivity : AppCompatActivity() {
             Log.d("MIAPP", "NO hay ninguna app que pueda ver esa web")
         }*/
 
-        val intent = Intent(this, ListaUsuariosActivity::class.java)
+        //val intent = Intent(this, ListaUsuariosActivity::class.java)
+        val intent = Intent(this, PerrosActivity::class.java)
         startActivity(intent)
 
     }
