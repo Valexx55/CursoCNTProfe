@@ -3,6 +3,7 @@ package edu.cnt.developer.profe
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,9 +20,17 @@ class PrincipalActivity : AppCompatActivity() {
             insets
         }
 
-        val urlRemota:String = "https://cntg.xunta.gal/"
+       /* val urlRemota:String = "https://cntg.xunta.gal/"
         val intentImplicito = Intent(Intent.ACTION_VIEW, Uri.parse(urlRemota))
         //TODO REVISAR ESTE CÓDIGO Y LOS INTENTS COMUNES DOC OFICIAL
-        startActivity(intentImplicito)
+        if (intentImplicito.resolveActivity(packageManager) != null) {
+            startActivity(intentImplicito)
+        } else {
+            Log.d("MIAPP", "NO hay ninguna app que pueda ver esa web")
+        }*/
+
+        val intent = Intent(this, ListaUsuariosActivity::class.java)
+        startActivity(intent)
+
     }
 }
