@@ -23,12 +23,15 @@
         android:theme="@style/Theme.CursoCNTProfe"
         tools:targetApi="31">
         <activity
+            android:name=".ProductosActivity"
+            android:exported="false" />
+        <activity
             android:name=".GalleriaPerrosActivity"
             android:exported="false" />
         <activity
-            android:label="Busca Fotos Perro"
             android:name=".PerrosActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Busca Fotos Perro" />
         <activity
             android:name=".ListaUsuariosActivity"
             android:exported="false" />

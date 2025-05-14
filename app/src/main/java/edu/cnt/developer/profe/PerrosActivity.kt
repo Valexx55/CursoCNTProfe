@@ -58,6 +58,10 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             snack.setTextColor(getColor(R.color.azul))
             snack.show()
 
+        //TODO DADO EL SIGUIENTE API https://my-json-server.typicode.com/miseon920/json-api/products
+        //definid una nueva actividad y los ficheros de layout y "fila" layout correspondientes
+
+
 
 
     }
