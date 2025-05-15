@@ -17,12 +17,14 @@ import edu.cnt.developer.profe.databinding.ActivityProductosBinding
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class ProductosActivity : AppCompatActivity() {
 
     lateinit var productoService: ProductoService
     lateinit var listadoProductos: ListadoProductos
     lateinit var binding: ActivityProductosBinding
+    lateinit var productosAdapter: ProductosAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +54,7 @@ class ProductosActivity : AppCompatActivity() {
                 //ProductosActivity.this
 
                 mostrarListaProductos()
+                programarSlider()
             }
             Log.d("MIAPP", "Fuera de corrutina")
 
@@ -64,10 +67,41 @@ class ProductosActivity : AppCompatActivity() {
 
     }
 
+    private fun programarSlider() {
+       binding.sliderproductos.visibility = View.VISIBLE
+        //CALCULO ESTADÍSTICOS (MAX, MIN, MEDIA)
+       val productoMasCaro =  listadoProductos.maxBy { p -> p.price.toFloat() }
+       val productoMasBarato = listadoProductos.minBy { p -> p.price.toFloat() }
+       val precioMedio = listadoProductos.map { p -> p.price.toFloat() }.average()
+        //LOS DIBUJO EN LA CAJA DE TEXTO
+       binding.tvPrecioMasCaro.text = productoMasCaro.price
+       binding.tvPrecioMasBarato.text = productoMasBarato.price
+       binding.tvPrecioMedio.text = precioMedio.toString()
+
+        binding.sliderproductos.value = productoMasCaro.price.toFloat()
+        binding.sliderproductos.valueFrom = productoMasBarato.price.toFloat()
+        binding.sliderproductos.valueTo = productoMasCaro.price.toFloat()
+
+        //PROGRAMO LO QUE SE VE AL PULSAR EL SLIDER (ETIQUETA)
+       binding.sliderproductos.setLabelFormatter { precio -> precio.roundToInt().toString() + " precio max" }
+
+        //ESCUCHO EL EVENTO DEL ARRASTRE DEL SLIDER
+        binding.sliderproductos.addOnChangeListener { slider, valor, fromUser ->
+            Log.d("MIAPP", "Valor actual $valor Es del usuario ? $fromUser")
+            var listaProductosFiltrada = ListadoProductos()
+            listadoProductos.filter { producto -> producto.price.toFloat() <= valor }.toCollection(listaProductosFiltrada)
+            this.productosAdapter.listaProductos = listaProductosFiltrada
+            //binding.rvlistaproductos.adapter = ProductosAdapter(listaProductosFiltrada)
+            this.productosAdapter.notifyDataSetChanged()
+        }
+
+    }
+
     fun mostrarListaProductos ()
     {
         //TODO: ARMAR EL RECYCLER, EL ADAPTER, VIEWHOLDER Y EL LAYAOUT MANAGER, PARA MOSTRAR LA LISTA
-        binding.rvlistaproductos.adapter = ProductosAdapter(listadoProductos)
+        this.productosAdapter = ProductosAdapter(listadoProductos)
+        binding.rvlistaproductos.adapter = this.productosAdapter
         binding.rvlistaproductos.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
     }

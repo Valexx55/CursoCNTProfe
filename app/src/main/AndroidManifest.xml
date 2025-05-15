@@ -23,6 +23,7 @@
         android:theme="@style/Theme.CursoCNTProfe"
         tools:targetApi="31">
         <activity
+            android:label="Productos de Internet"
             android:name=".productos.ProductosActivity"
             android:exported="false" />
         <activity
