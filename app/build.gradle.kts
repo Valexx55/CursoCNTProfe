@@ -51,5 +51,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
    // implementation(":pruebaskotlin")
 }

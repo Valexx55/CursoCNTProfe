@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.cnt.developer.profe.R
 import edu.cnt.developer.profe.RedUtil
 import edu.cnt.developer.profe.databinding.ActivityProductosBinding
@@ -46,6 +48,8 @@ class ProductosActivity : AppCompatActivity() {
                 listadoProductos.forEach{
                     producto -> Log.d("MIAPP", "PRODUCTO $producto")
                 }
+                //this@ProductosActivity.mostrarListaProductos()
+                //ProductosActivity.this
 
                 mostrarListaProductos()
             }
@@ -62,7 +66,10 @@ class ProductosActivity : AppCompatActivity() {
 
     fun mostrarListaProductos ()
     {
-        //TODO: ARMAR EL RECYCLER, EL ADAPTER, EL LAYAOUT MANAGER, PARA MOSTRAR LA LISTA
+        //TODO: ARMAR EL RECYCLER, EL ADAPTER, VIEWHOLDER Y EL LAYAOUT MANAGER, PARA MOSTRAR LA LISTA
+        binding.rvlistaproductos.adapter = ProductosAdapter(listadoProductos)
+        binding.rvlistaproductos.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
     }
 
 }
