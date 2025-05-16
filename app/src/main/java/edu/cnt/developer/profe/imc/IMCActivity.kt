@@ -1,4 +1,4 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.imc
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import edu.cnt.developer.profe.R
 import kotlin.math.absoluteValue
 
 /**
@@ -75,8 +76,8 @@ class IMCActivity : AppCompatActivity() {
     }
 
     private fun limpiaFormulario() {
-        findViewById<EditText>( R.id.editTextPeso).text.clear()
-        findViewById<EditText>( R.id.editTextAltura).text.clear()
+        findViewById<EditText>(R.id.editTextPeso).text.clear()
+        findViewById<EditText>(R.id.editTextAltura).text.clear()
     }
 
     private fun salirApp() {

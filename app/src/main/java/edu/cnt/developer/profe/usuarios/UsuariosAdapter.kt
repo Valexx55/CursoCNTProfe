@@ -1,8 +1,9 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.usuarios
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import edu.cnt.developer.profe.R
 
 /**
  * Esta clase proveerá las filas/datos al Recycler

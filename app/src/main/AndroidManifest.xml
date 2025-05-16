@@ -27,14 +27,14 @@
             android:name=".productos.ProductosActivity"
             android:exported="false" />
         <activity
-            android:name=".GalleriaPerrosActivity"
+            android:name=".perros.GalleriaPerrosActivity"
             android:exported="false" />
         <activity
-            android:name=".PerrosActivity"
+            android:name=".perros.PerrosActivity"
             android:exported="false"
             android:label="Busca Fotos Perro" />
         <activity
-            android:name=".ListaUsuariosActivity"
+            android:name=".usuarios.ListaUsuariosActivity"
             android:exported="false" />
         <activity
             android:name=".PrincipalActivity"
@@ -74,10 +74,10 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name=".ResultadoIMCActivity"
+            android:name=".imc.ResultadoIMCActivity"
             android:exported="false" />
         <activity
-            android:name=".IMCActivity"
+            android:name=".imc.IMCActivity"
             android:configChanges="orientation|keyboard|screenSize"
             android:exported="true"
             android:label="Cálculo de su IMC"

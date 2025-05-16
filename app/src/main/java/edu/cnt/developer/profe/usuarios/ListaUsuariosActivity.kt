@@ -1,13 +1,13 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.usuarios
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.cnt.developer.profe.R
 
 class ListaUsuariosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

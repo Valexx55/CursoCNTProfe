@@ -1,14 +1,12 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.imc
 
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import edu.cnt.developer.profe.R
 
 class ResultadoIMCActivity : AppCompatActivity() {
 

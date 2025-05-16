@@ -1,8 +1,9 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.usuarios
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import edu.cnt.developer.profe.R
 
 /**
  * Esta clase representa la fila / la caja que se recicla y contiene la info de un Usuario

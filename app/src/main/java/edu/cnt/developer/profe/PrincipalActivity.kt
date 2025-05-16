@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity
 
 class PrincipalActivity : AppCompatActivity() {
@@ -31,8 +32,8 @@ class PrincipalActivity : AppCompatActivity() {
         }*/
 
         //val intent = Intent(this, ListaUsuariosActivity::class.java)
-        // val intent = Intent(this, PerrosActivity::class.java)
-        val intent = Intent(this, ProductosActivity::class.java)
+         val intent = Intent(this, PerrosActivity::class.java)
+        //val intent = Intent(this, ProductosActivity::class.java)
         startActivity(intent)
 
     }

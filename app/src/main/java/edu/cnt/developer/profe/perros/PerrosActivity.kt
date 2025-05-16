@@ -1,4 +1,4 @@
-package edu.cnt.developer.profe
+package edu.cnt.developer.profe.perros
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,16 +6,17 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import edu.cnt.developer.profe.R
+import edu.cnt.developer.profe.util.RedUtil
 import edu.cnt.developer.profe.databinding.ActivityPerrosBinding
+import edu.cnt.developer.profe.usuarios.Usuario
 
 class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -76,6 +77,8 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
             Log.d("MIAPP", "Sí hay internet")
             val intentGaleria = Intent(this, GalleriaPerrosActivity::class.java)
+            intentGaleria.putExtra("RAZA", this.razaSeleccionada)
+            //intentGaleria.putExtra("USUARIO", Usuario("PEPA", 17) )
             startActivity(intentGaleria)
         } else {
             Log.d("MIAPP", "NO hay internet")

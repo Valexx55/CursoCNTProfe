@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IMCActivity">
+    tools:context=".imc.IMCActivity">
 
     <EditText
         android:id="@+id/editTextPeso"
