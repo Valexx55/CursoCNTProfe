@@ -31,7 +31,9 @@ class GalleriaPerrosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGalleriaPerrosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.razaperro.text = raza
         obtenerFotos()
+        //mostrarFotos()
 
     }
 
@@ -72,5 +74,9 @@ class GalleriaPerrosActivity : AppCompatActivity() {
 
     private fun mostrarFotos() {
         Log.d("MIAPP", "en mostrarFotos")
+        var adapterPerrosFragment = AdapterPerrosFragment(this)
+        adapterPerrosFragment.listadoPerros = this.listadoPerros
+        binding.viewPager2.adapter = adapterPerrosFragment
+
     }
 }
