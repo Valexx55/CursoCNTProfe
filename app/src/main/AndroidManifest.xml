@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Adivina"
+            android:name=".AdivinaActivity"
             android:exported="true">
 
             <!-- <intent-filter> -->
@@ -91,7 +91,7 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".VersionesActivity"
             android:exported="true">
 
             <!-- ESTO ES UN COMENTARIO -->

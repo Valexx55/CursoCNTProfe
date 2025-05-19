@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="EJERCICIOS BÁSICOS">
+        <menu>
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="0"
+                android:title="Versiones"
+                app:showAsAction="always" />
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="1"
+                android:title="Adivina"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+    <item android:title="EJERCICIOS INTERMEDIOS">
+        <menu>
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="2"
+                android:title="IMC"
+                app:showAsAction="always" />
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="3"
+                android:title="Usuarios"
+                app:showAsAction="always" />
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="4"
+                android:title="WebActivity"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+    <item android:title="EJERCICIOS AVANZADOS">
+        <menu>
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="5"
+                android:title="Productos"
+                app:showAsAction="always" />
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="6"
+                android:title="Perros"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+</menu>

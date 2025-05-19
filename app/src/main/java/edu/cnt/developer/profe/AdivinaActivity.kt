@@ -1,6 +1,5 @@
     package edu.cnt.developer.profe
 
-    import android.content.Intent
     import android.os.Bundle
     import android.util.Log
     import android.view.View
@@ -14,7 +13,7 @@
     import androidx.core.view.WindowInsetsCompat
     import kotlin.random.Random
 
-    class Adivina : AppCompatActivity() {
+    class AdivinaActivity : AppCompatActivity() {
         var posibilidades: Int = 5
         var numeroAleatorio: Int = 0
 
