@@ -32,8 +32,8 @@ class PrincipalActivity : AppCompatActivity() {
         }*/
 
         //val intent = Intent(this, ListaUsuariosActivity::class.java)
-         val intent = Intent(this, PerrosActivity::class.java)
-        //val intent = Intent(this, ProductosActivity::class.java)
+        // val intent = Intent(this, PerrosActivity::class.java)
+        val intent = Intent(this, ProductosActivity::class.java)
         startActivity(intent)
 
     }

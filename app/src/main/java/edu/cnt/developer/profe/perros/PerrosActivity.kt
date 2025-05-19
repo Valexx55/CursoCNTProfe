@@ -24,6 +24,7 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     //lateinit var spinnerRazas: Spinner
     val arrayRazas = arrayOf("affenpinscher", "african", "airedale", "akita", "appenzeller", "australian")
     private lateinit var binding: ActivityPerrosBinding
+    var primeraVezSpinner:Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +55,17 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             Log.d("MIAPP", "Raza seleccionada =  ${this.razaSeleccionada}" )
             //parent?.getItemAtPosition(position)
             //TODO SnackBar y conexión HTTP
-            val snack = Snackbar.make(binding.main, "PERRO SELECCIONADO", BaseTransientBottomBar.LENGTH_LONG)
-            snack.setAction("CERRAR"){vista->Log.d("MIAPP", "Snackbar tocado")}
-            snack.setTextColor(getColor(R.color.azul))
-            snack.show()
+            if (!this.primeraVezSpinner)
+            {
+                val snack = Snackbar.make(binding.main, "PERRO SELECCIONADO", BaseTransientBottomBar.LENGTH_LONG)
+                snack.setAction("CERRAR"){vista->Log.d("MIAPP", "Snackbar tocado")}
+                snack.setTextColor(getColor(R.color.azul))
+                snack.show()
+            } else {
+                this.primeraVezSpinner = false
+            }
+
+
 
         //TODO DADO EL SIGUIENTE API https://my-json-server.typicode.com/miseon920/json-api/products
         //definid una nueva actividad y los ficheros de layout y "fila" layout correspondientes

@@ -93,6 +93,9 @@ class ProductosActivity : AppCompatActivity() {
 
     }
 
+
+
+
     fun mostrarListaProductos ()
     {
         //TODO: ARMAR EL RECYCLER, EL ADAPTER, VIEWHOLDER Y EL LAYAOUT MANAGER, PARA MOSTRAR LA LISTA
