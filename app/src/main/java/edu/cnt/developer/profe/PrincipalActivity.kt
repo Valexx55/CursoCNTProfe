@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import edu.cnt.developer.fechayhora.FechaYHoraActivity
 import edu.cnt.developer.profe.imc.IMCActivity
 import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity
@@ -29,7 +30,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         this.navigationView = findViewById(R.id.navview)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)//para dibujar el icono del menu
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.outline_airware_24)//el icono
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburguesa)//el icono
 
         this.navigationView.setNavigationItemSelectedListener(this)
 
@@ -88,9 +89,10 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             5 -> {objetoClass = ProductosActivity::class.java}
             6 -> {objetoClass = PerrosActivity::class.java}
             7 -> {objetoClass = TabsActivity::class.java}
+            8 -> {objetoClass = FechaYHoraActivity::class.java}
 
         }
-
+        this.drawerLayout.closeDrawers()
         val intent = Intent(this, objetoClass)
         startActivity(intent)
 

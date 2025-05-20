@@ -52,6 +52,12 @@
                 android:title="Tabs"
                 app:showAsAction="always" />
 
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="8"
+                android:title="Fecha y hora"
+                app:showAsAction="always" />
+
         </menu>
     </item>
 </menu>
