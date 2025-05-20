@@ -9,6 +9,7 @@
     tools:context=".tabs.TabsActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

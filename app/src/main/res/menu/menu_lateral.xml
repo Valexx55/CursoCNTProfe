@@ -46,6 +46,12 @@
                 android:orderInCategory="6"
                 android:title="Perros"
                 app:showAsAction="always" />
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="7"
+                android:title="Tabs"
+                app:showAsAction="always" />
+
         </menu>
     </item>
 </menu>

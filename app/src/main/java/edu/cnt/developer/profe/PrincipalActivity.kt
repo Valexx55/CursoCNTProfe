@@ -12,6 +12,7 @@ import com.google.android.material.navigation.NavigationView
 import edu.cnt.developer.profe.imc.IMCActivity
 import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity
+import edu.cnt.developer.profe.tabs.TabsActivity
 import edu.cnt.developer.profe.usuarios.ListaUsuariosActivity
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -86,6 +87,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             4 -> {objetoClass = WebViewActivity::class.java}
             5 -> {objetoClass = ProductosActivity::class.java}
             6 -> {objetoClass = PerrosActivity::class.java}
+            7 -> {objetoClass = TabsActivity::class.java}
 
         }
 
