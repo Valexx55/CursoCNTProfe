@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import edu.cnt.developer.fechayhora.FechaYHoraActivity
+import edu.cnt.developer.profe.fechayhora.FechaYHoraActivity
 import edu.cnt.developer.profe.imc.IMCActivity
 import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity

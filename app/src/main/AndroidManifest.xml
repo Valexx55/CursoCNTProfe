@@ -23,7 +23,7 @@
         android:theme="@style/Theme.CursoCNTProfe"
         tools:targetApi="31">
         <activity
-            android:name="edu.cnt.developer.fechayhora.FechaYHoraActivity"
+            android:name=".fechayhora.FechaYHoraActivity"
             android:exported="false" />
         <activity
             android:name=".tabs.TabsActivity"

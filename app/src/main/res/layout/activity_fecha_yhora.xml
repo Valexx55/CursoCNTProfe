@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.cnt.developer.fechayhora.FechaYHoraActivity">
+    tools:context=".fechayhora.FechaYHoraActivity">
 
     <EditText
         android:id="@+id/cajahora"
