@@ -30,6 +30,19 @@ import edu.cnt.developer.profe.R
 import edu.cnt.developer.profe.databinding.ActivityMapsBinding
 import java.util.Locale
 
+/**
+ *
+ * 1 instalar librerias maps, location
+ * 2 conseguir el api key
+ * 3 creamos mapActivity (elegimos de la galería la plantilla de mapas view)
+ * 4 tocadoo el layout FloatinActionButton
+ * 5 comprobamos permisos de acceso (Manifest, y en tiempo de ejecución)
+ * 6 miro si la ubicación está activa (GPS activo)
+ * 7 si no, lo pido (startActivityForResult)
+ * 8 SI PERMISOS Y GPS ACTIVO --> fusedLocationProvider (request, callback, looper??)
+ * 9 obtenemos ubicación, pintamos el mapa, obtenemos la dirección física
+ */
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
