@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import edu.cnt.developer.profe.fechayhora.FechaYHoraActivity
 import edu.cnt.developer.profe.imc.IMCActivity
+import edu.cnt.developer.profe.mapa.MapsActivity
 import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity
 import edu.cnt.developer.profe.tabs.TabsActivity
@@ -93,6 +94,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             9 -> {
                 Notificaciones.lanzarNotificacion(this)
             }
+            10 -> { objetoClass = MapsActivity::class.java}
         }
         this.drawerLayout.closeDrawers()
 
