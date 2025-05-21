@@ -35,7 +35,7 @@ class FechaYHoraActivity : AppCompatActivity(), View.OnFocusChangeListener {
         //ocultarTeclado(v)//TODO pediente de revisar el cierre del teclao
        if (hasFocus)
        {
-
+           v!!.clearFocus()
            when (v!!.id)
            {
                R.id.cajaFecha -> {
@@ -57,11 +57,7 @@ class FechaYHoraActivity : AppCompatActivity(), View.OnFocusChangeListener {
 
     }
 
-    fun ocultarTeclado (view: View?)
-    {
-        val servicioinput = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        servicioinput.hideSoftInputFromWindow(view?.windowToken, 0)
-    }
+
 
     fun actualizarHoraSeleccionada (horaNueva:String) : Unit
     {

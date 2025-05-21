@@ -90,11 +90,18 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             6 -> {objetoClass = PerrosActivity::class.java}
             7 -> {objetoClass = TabsActivity::class.java}
             8 -> {objetoClass = FechaYHoraActivity::class.java}
-
+            9 -> {
+                Notificaciones.lanzarNotificacion(this)
+            }
         }
         this.drawerLayout.closeDrawers()
-        val intent = Intent(this, objetoClass)
-        startActivity(intent)
+
+        if (item.order!=9) //si ha lanzado una notificación, no vamos a ninguna actividad
+        {
+            val intent = Intent(this, objetoClass)
+            startActivity(intent)
+        }
+
 
         return super.onOptionsItemSelected(item)
     }

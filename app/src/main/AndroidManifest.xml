@@ -11,6 +11,7 @@
     Y COMPROBAR SI HAY CONEXIÓN A INTERNET Y DE QUÉ TIPO
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
