@@ -1,6 +1,6 @@
 [versions]
 agp = "8.7.2"
-kotlin = "1.9.24"
+kotlin = "2.1.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -16,6 +16,8 @@ playServicesMaps = "19.2.0"
 playServicesMapsVersion = "18.0.0"
 playServicesLocation = "18.0.0"
 googleAndroidLibrariesMapsplatformSecretsGradlePlugin = "2.0.1"
+firebaseAuthKtx = "23.2.1"
+firebaseDatabaseKtx = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +33,8 @@ converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ve
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 gms-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMapsVersion" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

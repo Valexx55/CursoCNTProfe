@@ -52,6 +52,8 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.gms.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.database.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -15,6 +15,7 @@ import edu.cnt.developer.profe.imc.IMCActivity
 import edu.cnt.developer.profe.mapa.MapsActivity
 import edu.cnt.developer.profe.perros.PerrosActivity
 import edu.cnt.developer.profe.productos.ProductosActivity
+import edu.cnt.developer.profe.realtimedatabase.ClientesActivity
 import edu.cnt.developer.profe.tabs.TabsActivity
 import edu.cnt.developer.profe.usuarios.ListaUsuariosActivity
 
@@ -97,6 +98,8 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             10 -> { objetoClass = MapsActivity::class.java}
             11 -> { objetoClass = AutenticacionActivity::class.java}
+            12 -> { objetoClass = ClientesActivity::class.java}
+
         }
         this.drawerLayout.closeDrawers()
 

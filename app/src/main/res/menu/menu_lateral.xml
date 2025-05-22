@@ -76,6 +76,12 @@
                 android:title="Auth FireBase"
                 app:showAsAction="always" />
 
+            <item
+                android:icon="@drawable/baseline_fire_hydrant_alt_24"
+                android:orderInCategory="12"
+                android:title="Clientes BD FireBase"
+                app:showAsAction="always" />
+
         </menu>
     </item>
 </menu>
