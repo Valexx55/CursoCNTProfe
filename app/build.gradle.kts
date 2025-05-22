@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -56,5 +57,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
     implementation("com.squareup.picasso:picasso:2.71828")
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
    // implementation(":pruebaskotlin")
 }

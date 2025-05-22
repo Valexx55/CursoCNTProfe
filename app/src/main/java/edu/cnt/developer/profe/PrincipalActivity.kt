@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import edu.cnt.developer.profe.auth.AutenticacionActivity
 import edu.cnt.developer.profe.fechayhora.FechaYHoraActivity
 import edu.cnt.developer.profe.imc.IMCActivity
 import edu.cnt.developer.profe.mapa.MapsActivity
@@ -95,6 +96,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 Notificaciones.lanzarNotificacion(this)
             }
             10 -> { objetoClass = MapsActivity::class.java}
+            11 -> { objetoClass = AutenticacionActivity::class.java}
         }
         this.drawerLayout.closeDrawers()
 

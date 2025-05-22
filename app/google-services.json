@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020119602367",
+    "project_id": "certadev-7b03a",
+    "storage_bucket": "certadev-7b03a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020119602367:android:cb833ef6996e9989f5620a",
+        "android_client_info": {
+          "package_name": "edu.cnt.developer.profe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB79eDcZ2ODgeDCqlK912GCf_hrsOBW2tY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
