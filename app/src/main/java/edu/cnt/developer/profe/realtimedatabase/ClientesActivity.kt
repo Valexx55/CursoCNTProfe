@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import edu.cnt.developer.profe.R
+import java.util.ArrayList
 
 const val URL_DATABASE = "https://certadev-7b03a-default-rtdb.europe-west1.firebasedatabase.app/"
 
@@ -49,5 +50,38 @@ class ClientesActivity : AppCompatActivity() {
             Log.e("MIAPP", "ERRRor", exception)
         }
     }
-    fun listarClientesBD(view: View) {}
+    fun listarClientesBD(view: View) {
+
+        this.databaseReference.child("clientes").get().addOnSuccessListener {
+            datos ->
+            var claveDocumento = datos.key
+            Log.d("MIAPP", "Clave documento = $claveDocumento")
+            var lista = datos.value as Map<String, Map<String, Any>> //los registros
+            var entradas = lista.entries
+            var nclis = entradas.size //tamaño del listado recuperado
+            Log.d("MIAPP", "Número de clientes = $nclis")
+            var listaClientes = ArrayList<Cliente>()
+            var clienteAux:Cliente
+            entradas.forEach{ //paso de JSON a Lista -- deserializando
+                (claveId, valor) ->
+                Log.d("MIAPP", "Clave cliente = $claveId")
+                val nombre  = valor.get("nombre").toString()
+                Log.d("MIAPP", "Nombre = $nombre")
+                val edadAux  = valor.get("edad").toString().toLong()
+                Log.d("MIAPP", "Edad = $edadAux")
+                clienteAux = Cliente(edadAux, nombre, claveId)
+                listaClientes.add(clienteAux)
+
+            }
+            mostrarClientes(listaClientes)
+
+        }
+    }
+
+    private fun mostrarClientes(listaClientes: ArrayList<Cliente>) {
+        listaClientes.forEach{
+            Log.d("MIAPP", "CLIENTE ${it.toString()}")
+        }
+
+    }
 }

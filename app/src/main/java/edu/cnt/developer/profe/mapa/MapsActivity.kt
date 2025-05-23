@@ -13,6 +13,9 @@ import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -66,6 +69,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         this.locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
+
     }
 
     /**
@@ -121,9 +125,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (estaActivoElGps())
+        {
+            Log.d("MIAPP", "El usuario ha activado el GPS")
+            //acceder a la ubicación
+            accederALaUbicacionGPS()
+        } else {
+            Log.d("MIAPP", "El usuario NO ha activado el GPS")
+            Toast.makeText(this, "GPS-DESACTIVADO Sin acceso a la ubicación", Toast.LENGTH_LONG).show()
+        }
+    }
+
     private fun solicitarActivacionGPS() {
         val intentAjustesGPS = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-        startActivityForResult(intentAjustesGPS, 300)
+        //startActivityForResult(intentAjustesGPS, 500)//forma antigua, la exe vuelve a la línea 147
+        resultLauncher.launch(intentAjustesGPS)//FORMA NUEVA, LA EXE VUELVE A AL LÍNEA 129
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
